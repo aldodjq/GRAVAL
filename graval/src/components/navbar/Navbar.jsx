@@ -1,28 +1,64 @@
-import React from "react";
+import { useState } from "react";
 import "./Navbar.css";
+import logo from "../../assets/logo.png";
 
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+
   return (
-    <nav class="navbar">
-        <div class="logo">
-            <img src="logo.png" alt="GRAVAL">
-            <span>GRAVAL</span>
-        </div>
+    <nav className="navbar">
 
-        <ul class="nav-links">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Nosotros</a></li>
-            <li><a href="#">Servicios</a></li>
-            <li><a href="#">Proyectos</a></li>
-            <li><a href="#">Clientes</a></li>
-            <li><a href="#">Contacto</a></li>
-        </ul>
+      <div className="logo">
+        <img src={logo} alt="GRAVAL" />
+      </div>
 
-        <div class="nav-actions">
-            <button class="btn-cotizacion">
-                Solicitar Cotización
-            </button>
-        </div>
+      <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
+
+        <li>
+          <a href="/">Inicio</a>
+        </li>
+
+        <li>
+          <a href="/nosotros">Nosotros</a>
+        </li>
+
+        <li
+          className="dropdown"
+          onMouseEnter={() => setServicesOpen(true)}
+          onMouseLeave={() => setServicesOpen(false)}
+        >
+          <a href="/">Servicios ▾</a>
+
+          <ul className={`dropdown-menu ${servicesOpen ? "show" : ""}`}>
+            <li><a href="/">Construcción Civil</a></li>
+            <li><a href="/">Obras Públicas</a></li>
+            <li><a href="/">Remodelaciones</a></li>
+            <li><a href="/">Consultoría</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="/proyectos">Proyectos</a>
+        </li>
+
+        <li>
+          <a href="/contacto">Contacto</a>
+        </li>
+
+      </ul>
+
+      <button className="btn-cotizacion desktop-btn">
+        Solicitar Cotización
+      </button>
+
+      <button
+        className="menu-toggle"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        ☰
+      </button>
+
     </nav>
   );
 }
