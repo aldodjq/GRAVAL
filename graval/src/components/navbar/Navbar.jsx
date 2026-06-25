@@ -46,11 +46,13 @@ function Navbar() {
           <a href="/contacto">Contacto</a>
         </li>
 
-      </ul>
+        <li className="mobile-btn">
+          <button className="btn-cotizacion">
+            Solicitar Cotización
+          </button>
+        </li>
 
-      <button className="btn-cotizacion desktop-btn">
-        Solicitar Cotización
-      </button>
+      </ul>
 
       <button
         className="menu-toggle"
