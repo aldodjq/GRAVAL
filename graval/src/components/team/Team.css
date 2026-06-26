@@ -1,0 +1,145 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.team-section{
+    width:100%;
+    padding:90px 8%;
+    background:#f6f8fb;
+}
+
+.team-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.team-title span{
+    color:#f9a826;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:3px;
+}
+
+.team-title h2{
+    font-size:2.8rem;
+    margin:15px 0;
+    color:#1b2b45;
+}
+
+.team-title p{
+    max-width:750px;
+    margin:auto;
+    color:#666;
+    line-height:1.8;
+}
+
+.team-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:35px;
+}
+
+.team-card{
+    position:relative;
+    overflow:hidden;
+    border-radius:20px;
+    background:white;
+    transition:.4s;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.team-card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 20px 45px rgba(0,0,0,.18);
+}
+
+.image-box{
+    position:relative;
+    overflow:hidden;
+}
+
+.image-box img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.team-card:hover img{
+    transform:scale(1.08);
+}
+
+.card-info{
+    padding:25px;
+    text-align:center;
+}
+
+.card-info h3{
+    color:#1b2b45;
+    margin-bottom:8px;
+}
+
+.card-info p{
+    color:#777;
+    margin-bottom:20px;
+}
+
+.social{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+}
+
+.social a{
+    width:42px;
+    height:42px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#eef2f7;
+    border-radius:50%;
+    color:#1b2b45;
+    font-size:18px;
+    transition:.3s;
+}
+
+.social a:hover{
+    background:#f9a826;
+    color:white;
+    transform:translateY(-5px);
+}
+
+@media(max-width:768px){
+
+.team-title h2{
+    font-size:2rem;
+}
+
+.image-box img{
+    height:300px;
+}
+
+}
+
+@media(max-width:480px){
+
+.team-section{
+    padding:60px 5%;
+}
+
+.team-title h2{
+    font-size:1.7rem;
+}
+
+.image-box img{
+    height:270px;
+}
+
+.social a{
+    width:38px;
+    height:38px;
+}
+
+}
