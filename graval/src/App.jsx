@@ -5,7 +5,7 @@ import Hero from "./components/hero/hero";
 import Nosotros from "./components/nosotros/Nosotros";
 import Servicios from "./components/servicios/Servicios";
 import Estadisticas from "./components/estadisticas/Estadisticas";
-
+import Proyectos from "./components/proyectos/Proyectos";
 function App() {
 
   return (
@@ -15,6 +15,7 @@ function App() {
     <Nosotros />
     <Servicios />
     <Estadisticas />
+    <Proyectos />
     <Team/>
     <Footer />  
     </>
