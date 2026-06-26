@@ -4,6 +4,8 @@ import Footer from "./components/footer/Footer";
 import Team from "./components/team/Team";
 import Hero from "./components/hero/hero";
 import Nosotros from "./components/nosotros/Nosotros";
+import Servicios from "./components/servicios/Servicios";
+
 function App() {
 
   return (
@@ -11,6 +13,7 @@ function App() {
     <Navbar />
     <Hero />
     <Nosotros />
+    <Servicios />
     <Body />
     <Team/>
     <Footer />  
