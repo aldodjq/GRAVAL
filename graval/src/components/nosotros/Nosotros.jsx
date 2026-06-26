@@ -66,11 +66,10 @@ export default function Nosotros() {
           vanguardia y un equipo altamente calificado.
         </p>
 
-        <div className="cards">
+        <div className="nosotros-cards">
 
-          <div className="card">
-
-            <div className="icon">
+          <div className="nosotros-card">
+            <div className="nosotros-icon">
               <FaBullseye />
             </div>
 
@@ -84,9 +83,9 @@ export default function Nosotros() {
 
           </div>
 
-          <div className="card">
+          <div className="nosotros-card">
 
-            <div className="icon">
+            <div className="nosotros-icon">
               <FaEye />
             </div>
 
@@ -102,13 +101,13 @@ export default function Nosotros() {
 
         </div>
 
-        <div className="values">
+        <div className="nosotros-values">
 
           {valores.map((valor, index) => (
 
-            <div className="value" key={index}>
+            <div className="nosotros-value" key={index}>
 
-              <div className="value-icon">
+              <div className="nosotros-value-icon">
                 {valor.icon}
               </div>
 

@@ -6,7 +6,7 @@ import Nosotros from "./components/nosotros/Nosotros";
 import Servicios from "./components/servicios/Servicios";
 import Estadisticas from "./components/estadisticas/Estadisticas";
 import Proyectos from "./components/proyectos/Proyectos";
-
+import Testimonios from "./components/testimonios/Testimonios";
 
 function App() {
 
@@ -18,7 +18,9 @@ function App() {
     <Servicios />
     <Estadisticas />
     <Proyectos />
+    <Testimonios />
     <Team/>
+    <Nosotros />
     <Footer />  
     </>
   )
