@@ -1,14 +1,18 @@
 import Navbar from "./components/navbar/Navbar";
 import Body from "./components/body/Body";
 import Footer from "./components/footer/Footer";  
-import HeroCarousel from "./components/herocarousel/HeroCarousel";
+import Team from "./components/team/Team";
+import Hero from "./components/hero/hero";
+import Nosotros from "./components/nosotros/Nosotros";
 function App() {
 
   return (
     <>
     <Navbar />
-    <HeroCarousel />
+    <Hero />
+    <Nosotros />
     <Body />
+    <Team/>
     <Footer />  
     </>
   )
