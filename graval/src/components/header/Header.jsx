@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./Header.css"; 
 import logo from "../../assets/logo.png";
+import { NavLink } from "react-router";
+
+// dentro del <ul>:
+
 
 /**
  * Header — componente de cabecera para web de constructora.
@@ -16,12 +20,15 @@ const LOGO_TEXT = "GRUPO";
 const LOGO_ACCENT = "GRAVAL";
 
 const NAV_ITEMS = [
-  { label: "Inicio", href: "#inicio" },
-  { label: "Proyectos", href: "#proyectos" },
-  { label: "Servicios", href: "#servicios" },
-  { label: "Nosotros", href: "#nosotros" },
-  { label: "Contacto", href: "#contacto" },
+  { label: "Inicio", to: "/" },
+  { label: "Proyectos", to: "/proyectos" },
+  { label: "Servicios", to: "/servicios" },
+  { label: "Nosotros", to: "/nosotros" },
+  { label: "Contacto", to: "/contacto" },
 ];
+<NavLink to={item.to} className={({ isActive }) => (isActive ? "active" : "")}>
+  {item.label}
+</NavLink>
 
 const CTA_TEXT = "Solicitar Presupuesto";
 const CTA_HREF = "#presupuesto";

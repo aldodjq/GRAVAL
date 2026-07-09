@@ -391,4 +391,10 @@
     padding: 16px;
     font-size: 15px;
   }
+  .chdr__nav--desktop a.active::after {
+  width: 100%;
+}
+.chdr__nav--desktop a.active {
+  color: var(--chdr-text);
+}
 }
