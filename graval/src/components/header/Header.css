@@ -1,0 +1,394 @@
+/* ============================================
+   HEADER CONSTRUCTORA — variables de tema
+   Edita estos valores para cambiar look & feel
+   sin tocar el resto del CSS.
+   ============================================ */
+:root {
+  --chdr-bg: #1b1d21;
+  --chdr-bg-scrolled: #15171a;
+  --chdr-text: #f5f4f1;
+  --chdr-text-muted: #a8acb3;
+  --chdr-accent: #F27D20;
+  --chdr-accent-dark: #F27D20;
+  --chdr-border: rgba(255, 255, 255, 0.08);
+
+  --chdr-font-display: "Oswald", "Arial Narrow", sans-serif;
+  --chdr-font-body: "Inter", system-ui, sans-serif;
+
+  --chdr-height: 84px;
+  --chdr-height-tablet: 76px;
+  --chdr-height-mobile: 68px;
+  --chdr-max-width: 1280px;
+  --chdr-radius: 6px;
+}
+
+/* Importa las tipografías (quítalo si ya las cargas en tu proyecto) */
+/*@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+/* ============================================
+   CONTENEDOR PRINCIPAL
+   ============================================ */
+.chdr {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  background: var(--chdr-bg);
+  border-bottom: 1px solid var(--chdr-border);
+  font-family: var(--chdr-font-body);
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.chdr--scrolled {
+  background: var(--chdr-bg-scrolled);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.chdr__inner {
+  max-width: var(--chdr-max-width);
+  height: var(--chdr-height);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* ============================================
+   LOGO
+   ============================================ */
+.chdr__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--chdr-text);
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.chdr__logo-icon {
+  width: 129px;
+  height: 86px;
+  color: var(--chdr-accent);
+  flex-shrink: 0;
+}
+
+.chdr__logo-text {
+  font-family: var(--chdr-font-display);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.chdr__logo-accent {
+  color: var(--chdr-accent);
+}
+
+/* ============================================
+   NAV DESKTOP
+   ============================================ */
+.chdr__nav--desktop {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.chdr__nav--desktop ul {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.chdr__nav--desktop a {
+  position: relative;
+  color: var(--chdr-text-muted);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 8px 2px;
+  transition: color 0.2s ease;
+}
+
+/* Firma visual: la línea "traza" el enlace como una viga al pasar el mouse */
+.chdr__nav--desktop a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0%;
+  background: var(--chdr-accent);
+  transition: width 0.25s ease;
+}
+
+.chdr__nav--desktop a:hover,
+.chdr__nav--desktop a:focus-visible {
+  color: var(--chdr-text);
+}
+
+.chdr__nav--desktop a:hover::after,
+.chdr__nav--desktop a:focus-visible::after {
+  width: 100%;
+}
+
+/* ============================================
+   CTA (botón de acción)
+   ============================================ */
+.chdr__cta {
+  display: inline-block;
+  background: var(--chdr-accent);
+  color: #1b1d21;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 12px 22px;
+  border-radius: var(--chdr-radius);
+  white-space: nowrap;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.chdr__cta:hover,
+.chdr__cta:focus-visible {
+  background: var(--chdr-accent-dark);
+  transform: translateY(-1px);
+}
+
+.chdr__cta--desktop {
+  flex-shrink: 0;
+}
+
+.chdr__cta--mobile {
+  display: none;
+}
+
+/* ============================================
+   BOTÓN HAMBURGUESA (oculto en desktop)
+   ============================================ */
+.chdr__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+  padding: 0;
+}
+
+.chdr__toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--chdr-text);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.chdr__toggle--open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.chdr__toggle--open span:nth-child(2) {
+  opacity: 0;
+}
+.chdr__toggle--open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ============================================
+   MENÚ MÓVIL (overlay desplegable)
+   ============================================ */
+.chdr__mobile {
+  display: none;
+}
+
+/* ============================================
+   RESPONSIVE — 3 niveles: desktop / tablet / móvil
+
+   > 1024px           → nav completo en fila (desktop)
+   681px – 1024px     → tablet: se colapsa a hamburguesa
+                         (5 links + CTA ya no caben cómodos),
+                         pero conserva el layout tipo desktop
+                         (logo a la izquierda) y el menú se
+                         abre como panel dropdown, no overlay
+                         de pantalla completa.
+   ≤ 680px            → móvil: logo centrado + overlay
+                         de pantalla completa.
+   ============================================ */
+
+/* --- Regla compartida: colapsar a hamburguesa desde tablet hacia abajo --- */
+@media (max-width: 1024px) {
+  .chdr__nav--desktop,
+  .chdr__cta--desktop {
+    display: none;
+  }
+
+  .chdr__toggle {
+    display: flex;
+  }
+
+  .chdr__mobile {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s;
+    overflow-y: auto;
+  }
+
+  .chdr__mobile--open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .chdr__mobile ul {
+    list-style: none;
+    margin: 0 0 28px 0;
+    padding: 0;
+  }
+
+  .chdr__mobile a {
+    display: block;
+    color: var(--chdr-text);
+    text-decoration: none;
+    font-family: var(--chdr-font-display);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid var(--chdr-border);
+    transition: color 0.2s ease;
+  }
+
+  .chdr__mobile a:hover,
+  .chdr__mobile a:focus-visible {
+    color: var(--chdr-accent);
+  }
+
+  .chdr__cta--mobile {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+/* --- TABLET (681px – 1024px) --- */
+@media (min-width: 681px) and (max-width: 1024px) {
+  .chdr__inner {
+    height: var(--chdr-height-tablet);
+    padding: 0 32px;
+  }
+
+  .chdr__logo-text {
+    font-size: 20px;
+  }
+
+  /* El menú se abre como panel flotante bajo el header, no a pantalla completa */
+  .chdr__mobile {
+    position: absolute;
+    top: 100%;
+    left: 32px;
+    right: 32px;
+    background: var(--chdr-bg-scrolled);
+    border: 1px solid var(--chdr-border);
+    border-radius: var(--chdr-radius);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+    padding: 28px 32px;
+    margin-top: 12px;
+    transform: translateY(-8px);
+    max-height: calc(100vh - var(--chdr-height-tablet) - 32px);
+  }
+
+  .chdr__mobile--open {
+    transform: translateY(0);
+  }
+
+  /* Aprovecha el ancho de la tablet: los links en 2 columnas */
+  .chdr__mobile ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 32px;
+    margin-bottom: 24px;
+  }
+
+  .chdr__mobile a {
+    font-size: 19px;
+    padding: 12px 0;
+  }
+
+  .chdr__cta--mobile {
+    padding: 14px;
+    font-size: 15px;
+  }
+}
+
+/* --- MÓVIL (≤ 680px) --- */
+@media (max-width: 680px) {
+  .chdr__inner {
+    height: var(--chdr-height-mobile);
+    /* El logo queda centrado usando un grid de 3 columnas simétricas */
+    display: grid;
+    grid-template-columns: 40px 1fr 40px;
+    align-items: center;
+    padding: 0 16px;
+  }
+
+  .chdr__logo {
+    grid-column: 2;
+    justify-self: center;
+  }
+
+  .chdr__logo-text {
+    font-size: 18px;
+  }
+
+  .chdr__toggle {
+    grid-column: 3;
+    justify-self: end;
+  }
+
+  /* En móvil el menú sí es un overlay de pantalla completa */
+  .chdr__mobile {
+    position: fixed;
+    top: var(--chdr-height-mobile);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--chdr-bg-scrolled);
+    padding: 32px 24px;
+    transform: translateY(-12px);
+  }
+
+  .chdr__mobile--open {
+    transform: translateY(0);
+  }
+
+  .chdr__mobile ul {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .chdr__mobile a {
+    font-size: 22px;
+    padding: 14px 0;
+  }
+
+  .chdr__cta--mobile {
+    padding: 16px;
+    font-size: 15px;
+  }
+}

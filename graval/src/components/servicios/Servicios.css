@@ -27,7 +27,7 @@ margin-bottom:70px;
 
 .services-header span{
 
-color:#F4B400;
+color:#F27D20;
 
 font-weight:700;
 
@@ -97,7 +97,7 @@ width:250px;
 
 height:250px;
 
-background:#F4B400;
+background:#F27D20;
 
 border-radius:50%;
 
@@ -150,7 +150,7 @@ height:85px;
 
 border-radius:20px;
 
-background:linear-gradient(135deg,#F4B400,#ffcf5c);
+background:linear-gradient(135deg,#F27D20,#ffcf5c);
 
 display:flex;
 
@@ -222,7 +222,7 @@ font-weight:600;
 
 .service-card button:hover{
 
-background:#F4B400;
+background:#F27D20;
 
 color:#0F172A;
 

@@ -11,7 +11,7 @@
 }
 
 .portfolio-header span{
-  color:#f4b400;
+  color:#F27D20;
   font-weight:700;
   letter-spacing:3px;
 }
@@ -47,7 +47,7 @@
 }
 
 .filter.active{
-  background:#f4b400;
+  background:#F27D20;
 }
 
 .masonry-grid{
@@ -94,7 +94,7 @@
 }
 
 .project-overlay span{
-  background:#f4b400;
+  background:#F27D20;
   color:#0f172a;
   width:max-content;
   padding:8px 18px;
