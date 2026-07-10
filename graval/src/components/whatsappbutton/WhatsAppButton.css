@@ -6,7 +6,7 @@
     width:68px;
     height:68px;
 
-    background:#25D366;
+    background:#F27D20;
     color:#fff;
 
     border-radius:50%;
@@ -29,10 +29,10 @@
 
     transform:translateY(-6px) scale(1.08);
 
-    background:#18b956;
+    background:#F27D20;
 
     box-shadow:
-    0 18px 35px rgba(37,211,102,.45);
+    0 18px 35px rgba(242,125,32,.45);
 }
 
 .icon{
@@ -53,7 +53,7 @@
 
     border-radius:50%;
 
-    background:#25D366;
+    background:#F27D20;
 
     animation:pulse 2s infinite;
 
