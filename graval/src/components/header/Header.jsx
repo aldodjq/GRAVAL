@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from "react";
-import "./Header.css"; 
+import "./Header.css";
 import logo from "../../assets/logo.png";
-import { NavLink } from "react-router";
-
-// dentro del <ul>:
-
+import { NavLink, Link } from "react-router";
 
 /**
  * Header — componente de cabecera para web de constructora.
  *
  * CÓMO EDITAR RÁPIDO:
- * 1. Logo: cambia el texto en LOGO_TEXT o reemplaza el <svg> por tu <img src="..." />
- * 2. Menú: agrega/quita/edita objetos en NAV_ITEMS (label + href)
+ * 1. Logo: cambia el texto en LOGO_TEXT o reemplaza el <img> por tu propio logo
+ * 2. Menú: agrega/quita/edita objetos en NAV_ITEMS (label + to)
  * 3. Botón de acción: cambia CTA_TEXT y CTA_HREF
  * 4. Colores/fuentes: todo se controla desde las variables :root en Header.css
  */
@@ -26,9 +23,6 @@ const NAV_ITEMS = [
   { label: "Nosotros", to: "/nosotros" },
   { label: "Contacto", to: "/contacto" },
 ];
-<NavLink to={item.to} className={({ isActive }) => (isActive ? "active" : "")}>
-  {item.label}
-</NavLink>
 
 const CTA_TEXT = "Solicitar Presupuesto";
 const CTA_HREF = "#presupuesto";
@@ -58,20 +52,26 @@ export default function Header() {
     <header className={`chdr ${isScrolled ? "chdr--scrolled" : ""}`}>
       <div className="chdr__inner">
         {/* LOGO */}
-        <a href="#inicio" className="chdr__logo" onClick={closeMenu}>
+        <Link to="/" className="chdr__logo" onClick={closeMenu}>
           <img className="chdr__logo-icon" src={logo} alt="Logo de GRAVAL" />
           <span className="chdr__logo-text">
             {LOGO_TEXT}
             <span className="chdr__logo-accent">{LOGO_ACCENT}</span>
           </span>
-        </a>
+        </Link>
 
         {/* MENÚ DESKTOP */}
         <nav className="chdr__nav chdr__nav--desktop" aria-label="Principal">
           <ul>
             {NAV_ITEMS.map((item) => (
-              <li key={item.href}>
-                <a href={item.href}>{item.label}</a>
+              <li key={item.to}>
+                <NavLink
+                  to={item.to}
+                  end={item.to === "/"}
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                >
+                  {item.label}
+                </NavLink>
               </li>
             ))}
           </ul>
@@ -104,10 +104,15 @@ export default function Header() {
         <nav aria-label="Principal móvil">
           <ul>
             {NAV_ITEMS.map((item) => (
-              <li key={item.href}>
-                <a href={item.href} onClick={closeMenu}>
+              <li key={item.to}>
+                <NavLink
+                  to={item.to}
+                  end={item.to === "/"}
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                  onClick={closeMenu}
+                >
                   {item.label}
-                </a>
+                </NavLink>
               </li>
             ))}
           </ul>
