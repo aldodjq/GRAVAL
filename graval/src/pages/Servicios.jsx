@@ -1,8 +1,12 @@
+import HeroServicios from "../components/heroservicios/HeroServicios";
+import Servicios from "../components/servicios/Servicios";
+
 // src/pages/Servicios.jsx
 export function Component() {
   return (
-    <section style={{ padding: "80px 24px" }}>
-      <h1>Servicios</h1>
+    <section>
+      <HeroServicios />
+      <Servicios/>
     </section>
   );
 }
