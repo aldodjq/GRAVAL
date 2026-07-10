@@ -1,0 +1,309 @@
+/* ============================================
+   CONTACT — sección de contacto
+   Reutiliza las variables --chdr-* globales
+   (definidas en Header.css) con fallback propio
+   para que este componente funcione aislado.
+   ============================================ */
+.cct {
+  --cct-bg: var(--chdr-bg, #1b1d21);
+  --cct-bg-alt: var(--chdr-bg-scrolled, #15171a);
+  --cct-text: var(--chdr-text, #f5f4f1);
+  --cct-text-muted: var(--chdr-text-muted, #a8acb3);
+  --cct-accent: var(--chdr-accent, #f2a93b);
+  --cct-accent-dark: var(--chdr-accent-dark, #d6901f);
+  --cct-border: var(--chdr-border, rgba(255, 255, 255, 0.1));
+  --cct-font-display: var(--chdr-font-display, "Oswald", sans-serif);
+  --cct-font-body: var(--chdr-font-body, "Inter", system-ui, sans-serif);
+  --cct-radius: 6px;
+
+  background: var(--cct-bg);
+  color: var(--cct-text);
+  font-family: var(--cct-font-body);
+  padding: 96px 24px;
+}
+
+.cct * {
+  box-sizing: border-box;
+}
+
+.cct__inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 64px;
+}
+
+/* ============================================
+   PANEL DE INFORMACIÓN
+   ============================================ */
+.cct__eyebrow {
+  display: inline-block;
+  color: var(--cct-accent);
+  font-family: var(--cct-font-display);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.cct__title {
+  font-family: var(--cct-font-display);
+  font-size: clamp(28px, 3.4vw, 40px);
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0 0 16px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.cct__subtitle {
+  color: var(--cct-text-muted);
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0 0 40px 0;
+  max-width: 42ch;
+}
+
+.cct__details {
+  list-style: none;
+  margin: 0 0 36px 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cct__details li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.cct__icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--cct-radius);
+  background: rgba(242, 169, 59, 0.1);
+  color: var(--cct-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cct__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.cct__details > li > div,
+.cct__hours {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cct__label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--cct-text-muted);
+}
+
+.cct__value {
+  font-size: 15.5px;
+  color: var(--cct-text);
+  line-height: 1.5;
+}
+
+.cct__link {
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.cct__link:hover,
+.cct__link:focus-visible {
+  color: var(--cct-accent);
+}
+
+.cct__hours {
+  padding-top: 24px;
+  border-top: 1px solid var(--cct-border);
+}
+
+/* ============================================
+   FORMULARIO
+   ============================================ */
+.cct__form {
+  background: var(--cct-bg-alt);
+  border: 1px solid var(--cct-border);
+  border-radius: 10px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.cct__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.cct__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+
+.cct__field label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--cct-text-muted);
+}
+
+.cct__field input,
+.cct__field select,
+.cct__field textarea {
+  font-family: var(--cct-font-body);
+  font-size: 15px;
+  color: var(--cct-text);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--cct-border);
+  border-radius: var(--cct-radius);
+  padding: 12px 14px;
+  outline: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+  resize: vertical;
+}
+
+.cct__field input::placeholder,
+.cct__field textarea::placeholder {
+  color: rgba(245, 244, 241, 0.35);
+}
+
+.cct__field select {
+  cursor: pointer;
+}
+
+.cct__field select option {
+  background: var(--cct-bg-alt);
+  color: var(--cct-text);
+}
+
+.cct__field input:focus,
+.cct__field select:focus,
+.cct__field textarea:focus {
+  border-color: var(--cct-accent);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Firma visual: marcas de esquina tipo "plano técnico"
+   que aparecen al enfocar un campo, como si el campo
+   quedara seleccionado sobre un plano de construcción. */
+.cct__field::before,
+.cct__field::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--cct-accent);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  top: 26px;
+}
+
+.cct__field::before {
+  left: -4px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.cct__field::after {
+  right: -4px;
+  border-left: none;
+  border-bottom: none;
+}
+
+.cct__field:focus-within::before,
+.cct__field:focus-within::after {
+  opacity: 1;
+}
+
+.cct__submit {
+  align-self: flex-start;
+  background: var(--cct-accent);
+  color: #1b1d21;
+  font-weight: 600;
+  font-size: 14.5px;
+  border: none;
+  border-radius: var(--cct-radius);
+  padding: 14px 30px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease, opacity 0.2s ease;
+}
+
+.cct__submit:hover:not(:disabled),
+.cct__submit:focus-visible {
+  background: var(--cct-accent-dark);
+  transform: translateY(-1px);
+}
+
+.cct__submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.cct__status {
+  font-size: 14px;
+  margin: -8px 0 0 0;
+}
+
+.cct__status--ok {
+  color: #7bc67e;
+}
+
+.cct__status--error {
+  color: #e2645f;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+  .cct__inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .cct__subtitle {
+    max-width: none;
+  }
+
+  .cct__form {
+    padding: 32px;
+  }
+}
+
+@media (max-width: 560px) {
+  .cct {
+    padding: 64px 16px;
+  }
+
+  .cct__row {
+    grid-template-columns: 1fr;
+  }
+
+  .cct__form {
+    padding: 24px;
+  }
+
+  .cct__title {
+    font-size: 26px;
+  }
+}
