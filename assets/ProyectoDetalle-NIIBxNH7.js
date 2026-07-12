@@ -1,1 +1,0 @@
-import{D as e,E as t,O as n}from"./index-BXaXDdK7.js";var r=e(),i=t();function a(){let e=(0,r.c)(3),{slug:t}=n(),a;e[0]===Symbol.for(`react.memo_cache_sentinel`)?(a={padding:`80px 24px`},e[0]=a):a=e[0];let o;return e[1]===t?o=e[2]:(o=(0,i.jsx)(`section`,{style:a,children:(0,i.jsxs)(`h1`,{children:[`Proyecto: `,t]})}),e[1]=t,e[2]=o),o}export{a as Component};
