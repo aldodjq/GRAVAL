@@ -1,0 +1,1 @@
+import{E as e}from"./index-BxuRuxW0.js";var t=e();function n(){return(0,t.jsxs)(`section`,{style:{padding:`80px 24px`,textAlign:`center`},children:[(0,t.jsx)(`h1`,{children:`404`}),(0,t.jsx)(`p`,{children:`Página no encontrada.`})]})}export{n as Component};
