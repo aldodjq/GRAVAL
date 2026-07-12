@@ -3,7 +3,7 @@ import { createBrowserRouter } from "react-router";
 import RootLayout from "./layouts/RootLayout";
 import ErrorPage from "./pages/ErrorPage";
 
-export const router = createBrowserRouter( {basename: "/graval" }, [
+export const router = createBrowserRouter([
   {
     path: "/",
     Component: RootLayout,       // Header + Footer una sola vez, no por página
