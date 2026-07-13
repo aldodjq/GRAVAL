@@ -1,0 +1,1 @@
+import{b as e,x as t,y as n}from"./index-2jJb02AP.js";var r=e(),i=n();function a(){let e=(0,r.c)(3),{slug:n}=t(),a;e[0]===Symbol.for(`react.memo_cache_sentinel`)?(a={padding:`80px 24px`},e[0]=a):a=e[0];let o;return e[1]===n?o=e[2]:(o=(0,i.jsx)(`section`,{style:a,children:(0,i.jsxs)(`h1`,{children:[`Proyecto: `,n]})}),e[1]=n,e[2]=o),o}export{a as Component};

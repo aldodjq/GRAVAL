@@ -1,1 +1,0 @@
-import{D as e,E as t}from"./index-BxuRuxW0.js";var n=t();function r(){let{slug:t}=e();return(0,n.jsx)(`section`,{style:{padding:`80px 24px`},children:(0,n.jsxs)(`h1`,{children:[`Proyecto: `,t]})})}export{r as Component};
