@@ -346,19 +346,19 @@ body {
 @media (max-width: 680px) {
   .chdr__inner {
     height: var(--chdr-height-mobile);
-    /* El logo queda centrado usando un grid de 3 columnas simétricas */
-    display: grid;
-    grid-template-columns: 40px 1fr 40px;
+    /* Logo a la izquierda, hamburguesa a la derecha — flex simple,
+       sin columnas fijas: se adapta a cualquier ancho de logo sin desbordarse. */
+    display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 0 16px;
-    gap: 0; /* el "gap: 24px" del flex de desktop no aplica aquí — el grid ya reparte el espacio con sus columnas */
+    gap: 12px;
   }
 
   .chdr__logo {
-    grid-column: 2;
-    justify-self: center;
-    min-width: 0;   /* clave: permite que el item de grid se encoja por debajo del tamaño de su contenido */
+    min-width: 0;   /* permite que el logo se encoja/trunque antes de desbordar */
     max-width: 100%;
+    flex-shrink: 1;
   }
 
   .chdr__logo-text {
@@ -366,11 +366,12 @@ body {
     overflow: hidden;
     text-overflow: ellipsis; /* si aun así no cabe, trunca con "..." en vez de desbordar */
     max-width: 100%;
+    min-width: 0; /* el eslabón que faltaba: sin esto, el texto no se encoge dentro del flex del logo */
+    white-space: nowrap;
   }
 
   .chdr__toggle {
-    grid-column: 3;
-    justify-self: end;
+    flex-shrink: 0; /* la hamburguesa nunca se encoge ni se deforma */
   }
 
   /* En móvil el menú sí es un overlay de pantalla completa */
