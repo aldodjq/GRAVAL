@@ -8,8 +8,8 @@
   --chdr-bg-scrolled: #15171a;
   --chdr-text: #f5f4f1;
   --chdr-text-muted: #a8acb3;
-  --chdr-accent: #F27D20;
-  --chdr-accent-dark: #F27D20;
+  --chdr-accent: #f2a93b;
+  --chdr-accent-dark: #d6901f;
   --chdr-border: rgba(255, 255, 255, 0.08);
 
   --chdr-font-display: "Oswald", "Arial Narrow", sans-serif;
@@ -23,7 +23,7 @@
 }
 
 /* Importa las tipografías (quítalo si ya las cargas en tu proyecto) */
-/*@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap");
 
 * {
   box-sizing: border-box;
@@ -73,8 +73,8 @@
 }
 
 .chdr__logo-icon {
-  width: 129px;
-  height: 86px;
+  width: 30px;
+  height: 30px;
   color: var(--chdr-accent);
   flex-shrink: 0;
 }
@@ -344,6 +344,7 @@
     grid-template-columns: 40px 1fr 40px;
     align-items: center;
     padding: 0 16px;
+    gap: 0; /* el "gap: 24px" del flex de desktop no aplica aquí — el grid ya reparte el espacio con sus columnas */
   }
 
   .chdr__logo {
@@ -391,10 +392,4 @@
     padding: 16px;
     font-size: 15px;
   }
-  .chdr__nav--desktop a.active::after {
-  width: 100%;
-}
-.chdr__nav--desktop a.active {
-  color: var(--chdr-text);
-}
 }
