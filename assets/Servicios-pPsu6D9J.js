@@ -1,0 +1,1 @@
+import{b as e,y as t}from"./index-ClttuW-_.js";var n=e(),r=t();function i(){let e=(0,n.c)(1),t;return e[0]===Symbol.for(`react.memo_cache_sentinel`)?(t=(0,r.jsx)(`section`,{style:{padding:`80px 24px`},children:(0,r.jsx)(`h1`,{children:`Servicios`})}),e[0]=t):t=e[0],t}export{i as Component};
