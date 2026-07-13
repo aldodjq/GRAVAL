@@ -29,6 +29,13 @@
   box-sizing: border-box;
 }
 
+/* Red de seguridad: evita que un desborde puntual de cualquier elemento
+   (imágenes, texto largo, etc.) genere scroll horizontal en toda la página. */
+html,
+body {
+  overflow-x: hidden;
+}
+
 /* ============================================
    CONTENEDOR PRINCIPAL
    ============================================ */
@@ -350,10 +357,15 @@
   .chdr__logo {
     grid-column: 2;
     justify-self: center;
+    min-width: 0;   /* clave: permite que el item de grid se encoja por debajo del tamaño de su contenido */
+    max-width: 100%;
   }
 
   .chdr__logo-text {
     font-size: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis; /* si aun así no cabe, trunca con "..." en vez de desbordar */
+    max-width: 100%;
   }
 
   .chdr__toggle {
