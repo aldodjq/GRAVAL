@@ -1,4 +1,5 @@
 // src/pages/Nosotros.jsx
+import Certificaciones from "../components/certificaciones/Certificaciones";
 import Nosotros from "../components/nosotros/Nosotros";
 import Politicas from "../components/politicas/Politicas";
 export function Component() {
@@ -6,6 +7,7 @@ export function Component() {
     <section style={{ padding: "80px 24px" }}>
       <Nosotros/>
       <Politicas/>
+      <Certificaciones/>
     </section>
   );
 }
