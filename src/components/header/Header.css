@@ -23,7 +23,7 @@
 }
 
 /* Importa las tipografías (quítalo si ya las cargas en tu proyecto) */
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap");
+/*@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap");
 
 * {
   box-sizing: border-box;
@@ -80,8 +80,8 @@ body {
 }
 
 .chdr__logo-icon {
-  width: 30px;
-  height: 30px;
+  width: 120px;
+  height: 80px;
   color: var(--chdr-accent);
   flex-shrink: 0;
 }
