@@ -1,0 +1,1 @@
+import{D as e,O as t}from"./index-6PlFIq5R.js";import{t as n}from"./Proyectos-CHBNSCbr.js";import{t as r}from"./Certificaciones-CSSvsdYg.js";var i=t(),a=e();function o(){let e=(0,i.c)(1),t;return e[0]===Symbol.for(`react.memo_cache_sentinel`)?(t=(0,a.jsxs)(`section`,{style:{padding:`80px 24px`},children:[(0,a.jsx)(n,{}),(0,a.jsx)(r,{})]}),e[0]=t):t=e[0],t}export{o as Component};
